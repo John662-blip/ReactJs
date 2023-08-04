@@ -1,7 +1,6 @@
-import logo from './logo.svg';
-import './App.scss';
-import Mycomponent from './Exa/Mycomponent'
-
+import logo from './logo.svg'
+import './App.scss'
+import ListTodos from './todos/listTodos';
 function App() {
   return (
     <div className="App">
@@ -10,8 +9,9 @@ function App() {
         <p>
           Hello world reactjs hung
         </p>
-        <Mycomponent />
+        <ListTodos />
       </header>
+
     </div>
   );
 }
