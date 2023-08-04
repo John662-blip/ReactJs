@@ -4,13 +4,13 @@ import React from "react";
 class AddComponent extends React.Component {
 
     state = {
-        titleJobs: "",
+        title: "",
         salary: "",
     }
 
     handleChangeTitleJob = (Event) => {
         this.setState({
-            titleJobs: Event.target.value
+            title: Event.target.value
         })
     }
     handleChangeSalary = (Event) => {
@@ -20,14 +20,27 @@ class AddComponent extends React.Component {
     }
     clickSubmit = (Event) => {
         Event.preventDefault()
-        alert(this.state.titleJobs + " " + this.state.salary)
+        if (!this.state.title || !this.state.salary || !(Number(this.state.salary) == this.state.salary)) alert("Chua nhap du du lieu ")
+        else {
+            this.props.addNewJob({
+                id: Math.floor(Math.random() * 1000),
+                title: this.state.title,
+                salary: this.state.salary
+            })
+            this.setState({
+                title: "",
+                salary: ""
+            })
+        }
+
     }
+
     render() {
         return (
             <>
                 <form action="/action_page.php">
                     <label htmlFor="fname">Job's title:</label><br />
-                    <input type="text" id="fname" name="fname" value={this.state.titleJobs}
+                    <input type="text" id="fname" name="fname" value={this.state.title}
                         onChange={(Event) => this.handleChangeTitleJob(Event)}
                     /><br />
                     <label htmlFor="lname">Salary:</label><br />
