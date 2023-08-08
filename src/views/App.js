@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Nav from './Nav/Nav';
 import Home from './Exa/Home';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as route,
   Routes,
   Route,
   Link,
@@ -15,6 +15,7 @@ import {
 } from 'react-router-dom';
 function App() {
   return (
+
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
