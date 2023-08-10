@@ -1,5 +1,5 @@
 import React from "react";
-
+import { toast } from "react-toastify";
 
 class AddComponent extends React.Component {
 
@@ -20,7 +20,7 @@ class AddComponent extends React.Component {
     }
     clickSubmit = (Event) => {
         Event.preventDefault()
-        if (!this.state.title || !this.state.salary || !(Number(this.state.salary) == this.state.salary)) alert("Chua nhap du du lieu ")
+        if (!this.state.title || !this.state.salary || !(Number(this.state.salary) == this.state.salary)) toast.error("Du lieu vua nhap co van de")
         else {
             this.props.addNewJob({
                 id: Math.floor(Math.random() * 1000),
@@ -31,6 +31,7 @@ class AddComponent extends React.Component {
                 title: "",
                 salary: ""
             })
+            toast.success("them thanh cong")
         }
 
     }

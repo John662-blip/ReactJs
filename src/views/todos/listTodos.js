@@ -77,7 +77,7 @@ class ListTodos extends React.Component {
                                             onChange={(event) => this.handleOnchangeEditTodo(event)}
                                             value={editTodo.title} /></span> :
 
-                                        <span>{index + 1}-{item.title}</span>
+                                        <span  >{index + 1}-{item.title}</span>
 
                                     }
 
