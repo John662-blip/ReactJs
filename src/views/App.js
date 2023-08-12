@@ -3,6 +3,7 @@ import './App.scss'
 import ListTodos from './todos/listTodos';
 import Mycomponent from './Exa/Mycomponent'
 import ListUsers from './Users/ListUsers';
+import DetailUsers from './Users/DetailUsers';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from './Nav/Nav';
@@ -11,8 +12,7 @@ import {
   BrowserRouter as route,
   Routes,
   Route,
-  Link,
-  BrowserRouter
+  BrowserRouter,
 } from 'react-router-dom';
 function App() {
   return (
@@ -41,7 +41,8 @@ function App() {
             <Route path='/' element={<Home />} exact />
             <Route path='/todo' element={<ListTodos />} />
             <Route path='/about' element={<Mycomponent />} />
-            <Route path='/users' element={<ListUsers />} />
+            <Route path='/users' element={<ListUsers />} exact />
+            <Route path='/users/:id' element={<DetailUsers />} />
           </Routes>
         </header>
 

@@ -1,6 +1,8 @@
 import React from "react";
 // import withRouter from "../../components/withRouter";
 import Color from "../HOC/Color";
+import logo from '../../assets/images/tải xuống (4).jpg'
+import { connect } from "react-redux";
 class Home extends React.Component {
 
 
@@ -12,8 +14,21 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <div>Hello My Name is Hung</div>
-            </>)
+                <div>Hello My Name is Hung</div >
+                <div>__________________</div>
+                <div>
+                    <img src={logo} />
+                </div>
+            </>
+        )
     }
 }
-export default Color(Home)
+
+const mapStateToProps = (state) => {
+    return {
+        dataRedux: state.users
+    }
+}
+
+
+export default connect(mapStateToProps)(Color(Home))
